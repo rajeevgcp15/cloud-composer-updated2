@@ -16,9 +16,7 @@ violations_master_auth = {}
 for allComposerInstances as address, rc {
 
 	composer_master_auth = plan.evaluate_attribute(rc.change.after, "config.0.master_authorized_networks_config")
-
-	composer_cidr = plan.evaluate_attribute(rc, "config.0.master_authorized_networks_config.0.cidr_blocks")
-	print(composer_cidr)
+	//print(composer_cidr)
 
 	if composer_master_auth == null {
 		violations_master_auth[address] = rc
